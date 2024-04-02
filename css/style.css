@@ -1,0 +1,76 @@
+:root{
+    --main-color: #1e202b;
+    --secondary-color: #009ad8;
+    --light-secondary-color: #323544;
+    --light-main-color: #262936;
+}
+*{
+    box-sizing: border-box;
+}
+nav{
+    background-color: var(--main-color);
+}
+/* nav .navlink:hover{
+
+} */
+/* start landing */
+.landing{
+    background: url(../images/banner.png);
+    background-size: cover;
+    /* background-position:  center center; */
+    min-height: 300px; /*360px*/
+}
+input.form-control:active,
+input.form-control{
+    background-color: var(--main-color) !important;
+    box-shadow: none !important;
+}
+input.form-control::placeholder {
+    color: #ccc; /* Adjust the color as needed */
+}
+button{
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+}
+
+/* end landing */
+/* start weather */
+.weather{
+    background-color: var(--main-color);
+}
+
+.weather .container{
+    top: -120px;
+    left: 0;
+    right: 0;
+
+}
+
+.weather .num{
+    font-size: 4rem;
+}
+.weather .icon{
+    vertical-align: middle;
+    font-size: 14px;
+}
+.weather .col-md-4{
+    background-color: var(--light-secondary-color);
+}
+.weather .inner .date{
+    background: rgba(0, 0, 0, 0.1);
+}
+.weather .sec-col {
+    background-color: var(--light-main-color);
+}
+
+/* end weather */
+/* start footer */
+footer{
+    background-color: var(--light-main-color);
+    margin-top: -50px;
+}
+footer .social-links a{
+    background-color: var(--main-color);
+}
+/* end footer */
