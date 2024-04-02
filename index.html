@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- bootstrap5 style -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- css style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+    <!-- start navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light py-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="inner d-flex">
+                    <img src="images/logo.png" alt="logo" class="me-3 d-block w-50"/>
+                    <div class="logo-text text-white">
+                        <h1 class="h6 mb-0">Weather</h1>
+                        <small class="text-secondary h6">tagline goes here</small>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li class="nav-item ">
+                    <!-- <button type="button" class="btn btn-info">
+                        <a href="#" class="text-decoration-none">Home</a>
+                    </button> -->
+                    <!-- <a class="nav-link active border rounded-4 px-4 py-0 me-3 border-info text-info" aria-current="page" href="#">Home</a> -->
+                    <a class="nav-link active btn btn-outline-info px-4 py-1 me-3" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link px-4 py-0 me-3 text-white" href="#">News</a> -->
+                    <a class="btn btn-outline-info px-4 py-1 me-3" href="#">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class=" btn btn-outline-info px-4 py-1 me-3" href="#">Live cameras</a>
+                </li>
+                <li class="nav-item">
+                    <a class=" btn btn-outline-info px-4 py-1 me-3" href="#">Photos</a>
+                </li>
+                <li class="nav-item">
+                    <a class=" btn btn-outline-info px-4 py-1 me-3" href="#">Contact</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- start landing -->
+    <div class="landing py-5 ">
+        <div class="container py-3">
+            <form class="position-relative mb-1">
+                <input type="text" name="search key" id="searchKey" placeholder="Find your location..." 
+                        class="form-control border-0 rounded-5  py-3 px-4"/>
+                <button class="btn btn-info text-white px-5 rounded-5 position-absolute text-center">Find</button>
+            </form>
+        </div>
+    </div>
+    <!-- end landing -->
+
+    <!-- start weather -->
+    <div class="weather">
+        <div class="container position-relative">
+            <div class="row g-0">
+                <div class="col-md-4 rounded-start-3">
+                    <div class="inner text-secondary rounded-start-3">
+                        <div class="date d-flex justify-content-between text-light text-opacity-75 p-2">
+                            <p class="day mb-0" id="currDay"></p>
+                            <p class="month mb-0" id="currMonth"></p>
+                        </div>
+                        <div class="weather-info px-4 py-3 ">
+                            <p class="location fs-3 text-light text-opacity-75"></p>
+                            <div class="degree d-flex justify-content-between align-items-baseline text-white">
+                                <div class="num fw-bold "><span></span> <sup>o</sup>C</div>
+                                <div class="icon "><img src="" alt="" class="d-block img1"></div>
+                            </div>
+                            <div class="state my-4 text-info " id="currState"></div>
+                            <span class="icon me-4"><img src="images/icon-umberella.png" alt="icon-umberella" class="me-2"> <span id="rain"></span></span>
+                            <span class="icon me-4"><img src="images/icon-wind.png" alt="icon-wind" class="me-2"><span id="windSpeed"></span></span>
+                            <span class="icon me-4"><img src="images/icon-compass.png" alt="icon-compass" class="me-2"><span id="windDir"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 sec-col">
+                    <div class="inner second text-secondary">
+                        <div class="date text-center text-light text-opacity-75 p-2">
+                            <p class="day2 mb-0" id="nextDay1"></p>
+                        </div>
+                        <div class="weather-info px-4 py-5 d-flex flex-column  align-items-center">
+                            <div class="icon "><img src="" alt="" class="d-block img2"></div> <!--img-->
+                            <div class="degree d-flex flex-column align-items-center">
+                                <div class="num fw-bold fs-4 text-white"><span id="maxDeg"></span> <sup>o</sup>C</div>
+                                <small ><span id="minDeg"></span> <sup>o</sup></small>
+                            </div>
+                            <div class="state my-4 text-info " id="day2State"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 rounded-end-3">
+                    <div class="inner text-secondary rounded-end-3">
+                        <div class="date text-center text-light text-opacity-75 p-2">
+                            <p class="day2 mb-0" id="nextDay2"></p>
+                        </div>
+                        <div class="weather-info px-4 py-5 d-flex flex-column  align-items-center">
+                            <div class="icon "><img src="" alt="" class="d-block img3" ></div> <!--img-->
+                            <div class="degree d-flex flex-column align-items-center">
+                                <div class="num fw-bold fs-4 text-white"><span id="maxDeg2"></span> <sup>o</sup>C</div>
+                                <small ><span id="minDeg2"></span> <sup>o</sup></small>
+                            </div>
+                            <div class="state my-4 text-info " id="day3State"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end weather -->
+
+    <!-- start footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row  align-items-baseline justify-content-center ">
+                <div class="col-md-8">
+                    <div class="inner">
+                        <form class="position-relative mb-5">
+                            <input type="email" name="email" id="email" placeholder="Enter your email to subscribe..." 
+                                    class="form-control border-0 rounded-5 text-white py-3 px-4"/>
+                            <button class="btn btn-info text-white px-5 rounded-5 position-absolute text-center">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="inner">
+                        <div class="social-links ">
+                            <a href="#" class="text-decoration-none rounded-5 py-2 px-3 text-info text-opacity-75 borderr-0"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="text-decoration-none rounded-5 py-2 px-3 text-info text-opacity-75 borderr-0"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="text-decoration-none rounded-5 py-2 px-3 text-info text-opacity-75 borderr-0"><i class="fa-brands fa-google-plus-g"></i></a>
+                            <a href="#" class="text-decoration-none rounded-5 py-2 px-3 text-info text-opacity-75 borderr-0"><i class="fa-brands fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                        
+            </div>
+            <p class="text-light text-opacity-75">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+            </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- bootstrap5 JS  -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- JS Code -->
+    <script src="js/index.js"></script>
+</body>
+</html>
